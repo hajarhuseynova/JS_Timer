@@ -4,7 +4,6 @@ const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
 let milliseconds = 0;
 let timeInterval = null;
-let hour = 0;
 let minute = 0;
 let second = 0;
 let millisecond = 0;
