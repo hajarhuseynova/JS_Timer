@@ -32,12 +32,21 @@ resetButton.addEventListener("click", () => {
   milliseconds = 0;
   timerDiv.textContent = "00:00:000";
 });
-
 function timer() {
   milliseconds += 10;
   minute = Math.floor(milliseconds / 60000);
   second = Math.floor((milliseconds - minute * 60000) / 1000);
   millisecond = milliseconds % 1000;
+  if (minute > 59) {
+    minute = 59;
+    second = 59;
+    millisecond = 999;
+    clearInterval(timeInterval);
+    timeInterval = null;
+    startButton.disabled = true;
+    stopButton.disabled = true;
+    resetButton.disabled = true;
+  }
 
   if (minute < 10) {
     minute = "0" + minute;
@@ -50,4 +59,3 @@ function timer() {
   }
   timerDiv.textContent = `${minute}:${second}:${millisecond}`;
 }
-timer();
