@@ -26,6 +26,7 @@ stopButton.addEventListener("click", () => {
 });
 resetButton.addEventListener("click", () => {
   resetButton.disabled = true;
+  startButton.disabled = false;
   clearInterval(timeInterval);
   timeInterval = null;
   milliseconds = 0;
@@ -44,7 +45,7 @@ function updateTime() {
     timeInterval = null;
     startButton.disabled = true;
     stopButton.disabled = true;
-    resetButton.disabled = true;
+    resetButton.disabled = false;
   }
 
   if (minute < 10) {
