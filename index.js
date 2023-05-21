@@ -9,7 +9,7 @@ let minute = 0;
 let second = 0;
 let millisecond = 0;
 startButton.addEventListener("click", () => {
-  timer();
+  updateTime();
   startButton.disabled = true;
   stopButton.disabled = false;
   resetButton.disabled = true;
@@ -32,7 +32,7 @@ resetButton.addEventListener("click", () => {
   milliseconds = 0;
   timerDiv.textContent = "00:00:000";
 });
-function timer() {
+function updateTime() {
   milliseconds += 10;
   minute = Math.floor(milliseconds / 60000);
   second = Math.floor((milliseconds - minute * 60000) / 1000);
