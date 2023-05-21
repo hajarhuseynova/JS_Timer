@@ -15,7 +15,7 @@ startButton.addEventListener("click", () => {
   if (timeInterval) {
     return;
   }
-  timeInterval = setInterval(timer);
+  timeInterval = setInterval(updateTime);
 });
 stopButton.addEventListener("click", () => {
   clearInterval(timeInterval);
